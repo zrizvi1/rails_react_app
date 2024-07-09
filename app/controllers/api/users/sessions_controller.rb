@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
-class Api::Users::SessionsController < Devise::SessionsController
-  respond_to :json
+module Api
+  module Users
+    # SessionsController
+    class SessionsController < Devise::SessionsController
+      respond_to :json
+    end
+  end
 end
