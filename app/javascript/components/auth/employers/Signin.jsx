@@ -5,7 +5,7 @@ import SigninForm from "../common/SigninForm";
 export default function Signin() {
   return (
     <>
-     <SigninForm title="Employer" path="/employer/signup" />
+     <SigninForm title="Employer" loginPath="/employer/signup" resetPasswordPath="/employer/reset-password"/>
     </>
   );
 }
