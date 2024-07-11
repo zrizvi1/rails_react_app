@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Defines the root path route ("/")
   root 'homepage#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -6,13 +7,20 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
-
+  devise_for :employers, path: 'api/employers',
+             defaults: { format: :json },
+             controllers: {
+               sessions: 'api/employers/sessions',
+               registrations: 'api/employers/registrations',
+               confirmations: 'api/employers/confirmations',
+               passwords: 'api/employers/passwords',
+             }
   devise_for :users, path: 'api/users',
-  defaults: { format: :json },
-  controllers: {
-    sessions: 'api/users/sessions',
-    registrations: 'api/users/registrations'
-  }
+             defaults: { format: :json },
+             controllers: {
+               sessions: 'api/users/sessions',
+               registrations: 'api/users/registrations',
+               confirmations: 'api/users/confirmations',
+               passwords: 'api/users/passwords'
+             }
 end
