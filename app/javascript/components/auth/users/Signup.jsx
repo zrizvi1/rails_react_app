@@ -5,7 +5,7 @@ import SignupForm from "../common/SignupForm";
 export default function SignUp() {
   return (
     <>
-      <SignupForm title="User" path="/user/login" />
+      <SignupForm title="User" signupPath="/user/login" />
     </>
   );
 }

@@ -58,7 +58,7 @@ export default function SignupForm(props) {
                         </div>
                       </form>
                       <p className="text-center">
-                        Already have an account? <Link to={props.path} className="link-primary">Login here</Link>
+                        Already have an account? <Link to={props.signupPath} className="link-primary">Login here</Link>
                       </p>
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
